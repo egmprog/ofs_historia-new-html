@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFS Argentina - Historia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/footer.js" defer></script>
+    <style>
+        html, body {
+            height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+            margin: 0; /* Elimina el margen por defecto */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; /* Organiza los elementos en columna */
+        }
+
+        main {
+            flex: 1; /* Permite que el main ocupe el espacio disponible */
+        }
+
+        footer {
+            background-color: #f8f8f8; /* Color de fondo del footer */
+            padding: 20px; /* Espaciado interno del footer */
+            text-align: center; /* Centra el texto del footer */
+        }
+    </style>
+</head>
+<body onload="loadNavbar()">
+    <header>
+        <div id="navbar"></div>
+    </header>
+    <main>
+        <!-- Contenido del main -->
+    </main>
+    <footer>
+        <div id="footer-content"></div>
+    </footer>
+</body>
+</html>
