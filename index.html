@@ -5,34 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFS Argentina - Historia</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <script src="../js/contenido.js" defer></script>
     <style>
         html, body {
             height: 100%;
             margin: 0;
             display: flex;
-            flex-direction: column; /* Coloca los elementos en columna */
+            flex-direction: column;
         }
 
         main {
-            flex: 1; /* Permite que el main ocupe el espacio disponible */
+            flex: 1;
         }
 
         .image-container {
             position: relative;
-            display: inline-block;
         }
 
         .image-title {
             position: absolute;
             top: 50%;
             left: 50%;
-            text-align: center;
             transform: translate(-50%, -50%);
+            text-align: center;
             color: white;
-            font-size: 3rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            padding: 0 10px;
+            line-height: 1.2;
+            white-space: nowrap;
         }
 
         .opmenu {
@@ -53,13 +52,15 @@
     <header>
         <div class="image-container">
             <img src="app/img/libros02.jpg" alt="libros antiguos" class="w-full h-auto">
-            <h1 class="image-title">Historia de la OFS en Argentina <br><span style="font-size: 60%;">Desde la recepción de
-                    la Regla paulina</span></h1>
+            <h1 class="image-title block text-lg sm:text-xl md:text-2xl lg:text-3xl">Historia de la OFS en Argentina <span class="block text-sm sm:text-base md:text-lg lg:text-xl">Desde la recepción de la Regla paulina</span></h1>
         </div>
     
-        <nav style="background-color: #FBBF24;">
-            <div class="container mx-auto px-4 py-8">
-                <ul class="grid grid-cols-9 gap-4 text-sm font-bold text-amber-300">
+        <nav class="bg-yellow-500">
+            <div class="container mx-auto px-4 py-4">
+                <button id="menu-toggle" class="block md:hidden text-white">
+                    ☰
+                </button>
+                <ul id="menu" class="hidden md:grid md:grid-cols-4 lg:grid-cols-9 gap-4 text-sm font-bold text-amber-300">
                     <li><button class="opmenu" onclick="cargarContenido('app/content/inicio.html')">Inicio</button></li>
                     <li><button class="opmenu" onclick="cargarContenido('app/content/antecedentes.html')">Antecedentes</button></li>
                     <li><button class="opmenu" onclick="cargarContenido('app/content/1980.html')">1980-1982</button></li>
@@ -87,7 +88,23 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                cargarContenido('app/content/inicio.html'); // Cargar contenido por defecto
+                cargarContenido('app/content/inicio.html');
+
+                const menuToggle = document.getElementById('menu-toggle');
+                const menu = document.getElementById('menu');
+                const menuItems = document.querySelectorAll('.opmenu');
+
+                menuToggle.addEventListener('click', function() {
+                    menu.classList.toggle('hidden');
+                });
+
+                menuItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        if (window.innerWidth < 768) { // Solo cerrar el menú en pantallas pequeñas
+                            menu.classList.add('hidden');
+                        }
+                    });
+                });
             });
 
             function cargarContenido(url) {
@@ -101,10 +118,8 @@
         </script>
     </main>
     <footer>
-        <div>
-            <div class="text-center py-5" style="background-color: #FBBF24;">
-                <p>Copyright &copy; 2024. All rights reserved.</p>
-            </div>
+        <div class="bg-yellow-500 text-center py-5">
+            <p>&copy; 2024. All rights reserved.</p>
         </div>
     </footer>
 </body>
