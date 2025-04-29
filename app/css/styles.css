@@ -19,11 +19,16 @@
   font-size: x-large;
 }
 
-.dosCol{
-    column-count: 2;
-    flex: auto;
-    flex-direction: column;
-    
+.dosCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .dosCol {
+      column-count: 2;
+      flex-direction: row;
+  }
 }
 
 .colI {
