@@ -19,10 +19,16 @@
   font-size: x-large;
 }
 
-.dosCol {
-  display: flex;
-  flex-direction: column;
+
+
+@media (max-width: 767px){
+  .dosCol {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
+
 
 @media (min-width: 768px) {
   .dosCol {
