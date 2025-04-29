@@ -47,6 +47,12 @@
             color: white;
         }
     </style>
+    <script>
+        // Desactivar el menú contextual del botón derecho
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+    </script>
 </head>
 <body>
     <header>

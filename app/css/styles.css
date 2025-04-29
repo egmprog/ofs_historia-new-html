@@ -1,8 +1,10 @@
 .fuente{
     font-family: 'Courier New', Courier, monospace;
-    border: 1px solid black;
+    border: .5px solid grey;
     padding: 10px;
-    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px
+
 }
 
 .parrafo1{
@@ -13,10 +15,14 @@
     font-size: xx-large;
 }
 
+.titulo2{
+  font-size: x-large;
+}
+
 .dosCol{
     column-count: 2;
     flex: auto;
-    flex-direction: row;
+    flex-direction: column;
     
 }
 
@@ -34,4 +40,6 @@
   .descr1{
     flex-direction: row;
     align-content: center;
-  }
+    font-size: smaller;
+    text-align: center;
+  } 
