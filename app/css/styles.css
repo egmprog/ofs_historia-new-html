@@ -26,32 +26,33 @@
     display: flex;
     flex-direction: column;
   }
+  .colI, .colD {
+    flex: 1;
+    min-width: 0; /* Evita desbordamiento */
+  }
 
 }
 
 
 @media (min-width: 768px) {
   .dosCol {
-      column-count: 2;
-      flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px; /* Espacio entre columnas */
+  }
+  
+  .colI, .colD {
+    flex: 1;
+    min-width: 0; /* Evita desbordamiento */
   }
 }
 
-.colI {
-    margin-left: auto;
-    margin-right: 5px;
-  }
-  
-  .colD {
-    margin-left: 5px;
-    margin-right: auto;
-    
-  }
 
  
 
 .descr1 {
-    font-size: smaller;
-    text-align: center;
-    margin-top: 10px;       /* Espacio entre la imagen y el texto */
+  font-size: smaller;
+  text-align: center;
+  margin-top: 10px; /* Espacio entre la imagen y el texto */
+  clear: both; /* Asegura que el párrafo esté justo debajo de la imagen */
 }
