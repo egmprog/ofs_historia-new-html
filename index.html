@@ -128,5 +128,25 @@
             <p>&copy; 2025. All rights reserved.</p>
         </div>
     </footer>
+    <button onclick="scrollToTop()" class="back-to-top" id="backToTopBtn" title="Ir arriba">↑</button>
+    <script>
+        // Función para desplazarse suavemente al principio de la página
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Mostrar u ocultar el botón de regresar al principio según la posición del usuario
+        window.addEventListener('scroll', function() {
+            var backToTopButton = document.getElementById('backToTopBtn');
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -56,3 +56,22 @@
   margin-top: 10px; /* Espacio entre la imagen y el texto */
   clear: both; /* Asegura que el párrafo esté justo debajo de la imagen */
 }
+
+/* Estilos para el botón flotante */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ca6f1d;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+}
