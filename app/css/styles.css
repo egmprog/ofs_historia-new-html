@@ -48,9 +48,10 @@
     
   }
 
-  .descr1{
-    flex-direction: row;
-    align-content: center;
+ 
+
+.descr1 {
     font-size: smaller;
     text-align: center;
-  } 
+    margin-top: 10px;       /* Espacio entre la imagen y el texto */
+}
